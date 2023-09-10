@@ -1,0 +1,17 @@
+:root{
+    --appLightBg:#DCDCDC;
+    --appDarkBg:#111B21;
+}
+
+.App{
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    background-color: var(--appLightBg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.appDark{
+    background-color: var(--appDarkBg) !important;
+}
