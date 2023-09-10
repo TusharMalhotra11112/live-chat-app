@@ -69,6 +69,9 @@ export default function UserList() {
                                     },
                                 }
                                 axios.post("https://weak-ruby-earthworm-tux.cyclic.cloud/chat", {userId:user._id,name:user.name,} ,config)
+                                .then((val)=>{
+                                    nav(`../chat/${val.data._id}&${user.name}`)
+                                })
                                 dispatch(refreshSideBar)
                             }}>
                                 <div className={"ou-Icon"+ (lightMode?"":" dark")}>{user.name[0].toUpperCase()}</div>
