@@ -7,6 +7,7 @@ import {myContext} from './MainContainer'
 import RefreshIcon from "@mui/icons-material/Refresh";
 import axios from 'axios';
 import refreshSideBar from '../Features/refreshSideBar';
+import { useNavigate } from 'react-router-dom';
 
 export default function GroupList() {
     const lightMode = useSelector((state)=>state.themeKey)
@@ -14,7 +15,7 @@ export default function GroupList() {
     const {refresh,setRefresh} = useContext(myContext)
     const [groups, SetGroups] = useState([]);
     const dispatch = useDispatch();
-
+    const nav = useNavigate()
     useEffect(()=>{
 
         const config ={
@@ -35,8 +36,8 @@ export default function GroupList() {
     return (
         <div className={'onlineUsersTab' + (lightMode?"":" dark")}>
         <div className={"ou-Header" + (lightMode?"":" dark")}>
-            <img src={Logo} alt="Logo" className='ou-HeaderImg'/>
-            <p className="ou-HeaderText">Available Users</p>
+            <img src={Logo} alt="Logo" className='ou-HeaderImg' onClick={()=>{nav("../welcome")}}/>
+            <p className="ou-HeaderText">Available Groups</p>
             <IconButton
             className={"icon" + (lightMode ? "" : " dark")}
             onClick={() => {

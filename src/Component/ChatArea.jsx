@@ -1,11 +1,11 @@
-import DeleteIcon from '@mui/icons-material/Delete';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { IconButton } from '@mui/material';
 import MessageSent from './MessageSent';
 import MessageReceived from './MessageReceived';
 import SendIcon from '@mui/icons-material/Send';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { myContext } from './MainContainer';
 import axios from 'axios';
 
@@ -77,14 +77,14 @@ export default function ChatArea({refs,setRefs}) {
         return (
             <div className={'chatArea-Container'+ (lightMode?"":" dark")}>
                 <div className={"chatHeader " + (lightMode?"":"dark")}>
+                    <IconButton>
+                        <ArrowBackIcon className={'icon'+ (lightMode?"":" dark")} onClick={()=>{Navigate("../welcome")}} />
+                    </IconButton>
                     <p className={"chat-icon " + (lightMode?"":"dark")}>{chat_user[0].toUpperCase()}</p>
                     <div className="chat-Head">
                         <p className="chat-Title">{chat_user}</p>
                         {/* <p className="chat-Timestamp">{props.timeStamp}</p> */}
                     </div>
-                    <IconButton>
-                        <DeleteIcon className={'icon'+ (lightMode?"":" dark")}/>
-                    </IconButton>
                 </div>
 
                 <div id='chatArea' className={"chatArea"+(lightMode?"":" dark")}>

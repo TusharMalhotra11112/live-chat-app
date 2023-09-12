@@ -40,10 +40,10 @@ export default function UserList() {
   return (
     <div className={'onlineUsersTab' + (lightMode?"":" dark")}>
         <div className={"ou-Header" + (lightMode?"":" dark")}>
-            <img src={Logo} alt="Logo" className='ou-HeaderImg'/>
+            <img src={Logo} alt="Logo" className='ou-HeaderImg' onClick={()=>{nav("../welcome")}}/>
             <p className="ou-HeaderText">Available Users</p>
             <IconButton
-            className={"icon" + (lightMode ? "" : " dark")}
+            className={"ou-SearchBox" + (lightMode?"":" dark")}
             onClick={() => {
               setRefresh(!refresh);
             }}>

@@ -6,7 +6,7 @@ export default function MessageReceived({props}) {
   return (
     <div className={'messageReceived'+ (lightMode?"":" dark")}>
         <div className={"messageReceivedContainer"+ (lightMode?"":" dark")}>
-          <div className={"receivedMessageIcon"+ (lightMode?"":" dark")}>{props.sender.name[0]}</div>
+          <div className={"receivedMessageIcon"+ (lightMode?"":" dark")}>{props.sender.name[0].toUpperCase()}</div>
           <div className={"receivedMessageBox"+ (lightMode?"":" dark")}>
             <div className={"receivedMessage"+ (lightMode?"":" dark")}>
               <p className="receivedMessageName">{props.sender.name}</p>

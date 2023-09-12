@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Logo from './Images/Welcome.png'
 import CheckIcon from '@mui/icons-material/Check';
 import { IconButton } from '@mui/material';
 import { useSelector } from 'react-redux';
@@ -18,6 +19,7 @@ export default function CreateGroup() {
   const user = userData.data
   const [groupName,setGroupName] = useState("")
   const [open,setOpen] = useState(false)
+  
 
    const handleClickOpen = () => {
     setOpen(true)
@@ -48,18 +50,11 @@ export default function CreateGroup() {
 
   return (
     <div className={'createGroup '+ (lightMode?"":" dark")}>
-        <input type="text" className={"createGroupName"+ (lightMode?"":" dark")} placeholder='Enter Group Name'
-        onChange={(e)=>{
-          setGroupName(e.target.value)
-        }}
-        />
-        <IconButton
-        onClick={()=>{
-          createNewGrouop()
-        }}
-        >  
-            <CheckIcon className={'icon'+ (lightMode?"":" dark")}/>
-        </IconButton>
+      <img src={Logo} alt="Logo" className='ou-HeaderImg' onClick={()=>{Navigate("../welcome")}}/>
+      <input type="text" className={"createGroupName"+ (lightMode?"":" dark")} placeholder='Enter Group Name' onChange={(e)=>{ setGroupName(e.target.value)}} />
+      <IconButton onClick={()=>{createNewGrouop()}}>  
+          <CheckIcon className={'icon'+ (lightMode?"":" dark")}/>
+      </IconButton>
     </div>
   )
 }

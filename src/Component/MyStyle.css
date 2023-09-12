@@ -140,7 +140,10 @@
     display: flex;
     flex-direction: column;
     border-radius: 20px;
+    min-width: 20vw;
+    flex-wrap: nowrap;
 }
+
 .sideBar.dark{
     background-color: var(--appDarkBg) !important;
 }
@@ -570,3 +573,88 @@
 
 
 /* ---------------------------------- */
+
+@media screen and (max-width:426px){
+    .App{
+        max-width: 100vw;
+        overflow: hidden;
+    }
+
+    .loginImg{
+        display: none;
+    }
+    .loginPage{
+        width: 90vw;
+    }
+
+    .loginBox,.SignUpBox {
+        flex: 1;
+        margin: 5px;
+        width: 90%;
+        position: absolute;
+        height: 100%;
+    }
+    .loginText{
+        margin-left: 20%;
+    }
+
+
+    .mainContainer{
+        overflow: none;
+        width: 100%;
+        position: relative;
+    }
+
+    .welcome{
+        display: none;
+    }
+    .sideBar{
+        width: 100%;
+        flex: 1;
+        position: absolute;
+    }
+    .sb-conversations{
+        min-height:70vh;
+    }
+    .ou-SearchBar{
+        max-width: 80%;
+    }
+
+    .con-title{
+        font-size:25px;
+    }
+    .con-lastMessage{
+        font-size: 15px;
+    }
+
+    .onlineUsersTab{
+        flex: 1;
+        margin: 5px;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+    }
+    
+    .chatArea-Container{
+        flex: 1;
+        margin: 5px;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        max-width: 100vw;
+    }
+
+    .createGroup{
+        flex: 1;
+        margin: 5px;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    .createGroupName{
+
+        width: 100%;
+    }
+}
