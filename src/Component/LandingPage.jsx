@@ -26,7 +26,7 @@ export default function Login() {
         },
       }
 
-      const response = await axios.post("https://weak-ruby-earthworm-tux.cyclic.cloud/user/login/",data,config)
+      const response = await axios.post("https://chat-app-backed.onrender.com/user/login/",data,config)
 
       setLoading(false)
       localStorage.setItem("userData",JSON.stringify(response))
@@ -48,7 +48,7 @@ export default function Login() {
         },
       }
 
-      const response = await axios.post("https://weak-ruby-earthworm-tux.cyclic.cloud/user/register/",data,config)
+      const response = await axios.post("https://chat-app-backed.onrender.com/user/register/",data,config)
 
       setLoading(false)
       localStorage.setItem("userData",JSON.stringify(response))

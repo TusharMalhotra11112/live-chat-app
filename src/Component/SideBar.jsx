@@ -36,7 +36,7 @@ export default function SideBar({refs,setRefs}) {
           Authorization: `Bearer ${user.token}`,
         },
     }
-    axios.get("https://weak-ruby-earthworm-tux.cyclic.cloud/chat/",config)
+    axios.get("https://chat-app-backed.onrender.com/chat/",config)
     .then((result)=>{
       setConversations(result.data)
     })

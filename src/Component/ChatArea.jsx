@@ -36,7 +36,7 @@ export default function ChatArea({refs,setRefs}) {
                 Authorization: `Bearer ${user.token}`,
             },
         }
-        axios.post("https://weak-ruby-earthworm-tux.cyclic.cloud/message",{content:messageContent,chatId:chat_id,userId:user._id},config)
+        axios.post("https://chat-app-backed.onrender.com/message",{content:messageContent,chatId:chat_id,userId:user._id},config)
         .then(scrollToBottom())
         scrollToBottom()
     }
@@ -47,7 +47,7 @@ export default function ChatArea({refs,setRefs}) {
                 Authorization: `Bearer ${user.token}`,
             },
         }
-        axios.get("https://weak-ruby-earthworm-tux.cyclic.cloud/message/"+ chat_id ,config)
+        axios.get("https://chat-app-backed.onrender.com/message/"+ chat_id ,config)
         .then(({data})=>{
             setAllMessages(data)
             setloaded(true)

@@ -23,7 +23,7 @@ export default function GroupList() {
                 Authorization: `Bearer ${userData.data.token}`,
             },
         }
-        axios.get("https://weak-ruby-earthworm-tux.cyclic.cloud/chat/fetchGroups",config)
+        axios.get("https://chat-app-backed.onrender.com/chat/fetchGroups",config)
         .then((result)=>{
             SetGroups(result.data)
         })
@@ -64,7 +64,7 @@ export default function GroupList() {
                                         Authorization:`Bearer ${userData.data.token}`,
                                     },
                                 }
-                                axios.post("https://weak-ruby-earthworm-tux.cyclic.cloud/chat", {userId:group._id,name:group.chatname,} ,config)
+                                axios.post("https://chat-app-backed.onrender.com/chat", {userId:group._id,name:group.chatname,} ,config)
                                 dispatch(refreshSideBar)
                             }}>
                                 <div className={"ou-Icon"+ (lightMode?"":" dark")}>{group.chatname[0].toUpperCase()}</div>

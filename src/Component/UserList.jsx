@@ -28,7 +28,7 @@ export default function UserList() {
                 Authorization: `Bearer ${userData.data.token}`,
             },
         }
-        axios.get("https://weak-ruby-earthworm-tux.cyclic.cloud/user/fetchUsers",config)
+        axios.get("https://chat-app-backed.onrender.com/user/fetchUsers",config)
         .then((data)=>{
             // console.log("Data refreshed in user panel")
             setUsers(data.data)
@@ -68,7 +68,7 @@ export default function UserList() {
                                         Authorization:`Bearer ${userData.data.token}`,
                                     },
                                 }
-                                axios.post("https://weak-ruby-earthworm-tux.cyclic.cloud/chat", {userId:user._id,name:user.name,} ,config)
+                                axios.post("https://chat-app-backed.onrender.com/chat", {userId:user._id,name:user.name,} ,config)
                                 .then((val)=>{
                                     nav(`../chat/${val.data._id}&${user.name}`)
                                 })

@@ -35,7 +35,7 @@ export default function CreateGroup() {
         Authorization: `Bearer ${user.token}`,
       },
     }
-    axios.post("https://weak-ruby-earthworm-tux.cyclic.cloud/chat/createGroup",{
+    axios.post("https://chat-app-backed.onrender.com/chat/createGroup",{
       name:groupName,
       users:["64e8a0111bbe17a36ff2bffe","64e8a03f1bbe17a36ff2c048"],
     },config)
