@@ -30,7 +30,6 @@ export default function SideBar({refs,setRefs}) {
   const user = userData.data;
   
   useEffect(()=>{
-
     const config = {
         headers:{
           Authorization: `Bearer ${user.token}`,

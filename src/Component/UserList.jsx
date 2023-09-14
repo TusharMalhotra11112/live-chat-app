@@ -34,7 +34,7 @@ export default function UserList() {
             setUsers(data.data)
         })
         
-    },[refresh,userData])
+    },[refresh,userData.data.token])
 
     const lightMode = useSelector((state)=>state.themeKey)
   return (

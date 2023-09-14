@@ -37,9 +37,12 @@ export default function ChatArea({refs,setRefs}) {
             },
         }
         axios.post("https://chat-app-backed.onrender.com/message",{content:messageContent,chatId:chat_id,userId:user._id},config)
-        .then(scrollToBottom())
-        scrollToBottom()
+        .then(()=>{
+            scrollToBottom()
+        })
     }
+    
+
 
     useEffect(()=>{
         const config = {
@@ -51,13 +54,11 @@ export default function ChatArea({refs,setRefs}) {
         .then(({data})=>{
             setAllMessages(data)
             setloaded(true)
-            scrollToBottom() 
-        })     
-        scrollToBottom() 
+            scrollToBottom()
+        })
 
 
     },[refresh,user,chat_id,])
-
 
     const Navigate = useNavigate()
     if(!userData){
@@ -65,15 +66,12 @@ export default function ChatArea({refs,setRefs}) {
         Navigate("/")
     }
 
-
-
     if(!loaded){
         return(
         <div className={'chatArea-Container'+ (lightMode?"":" dark")}>
         </div>)
     }
     else{
-
         return (
             <div className={'chatArea-Container'+ (lightMode?"":" dark")}>
                 <div className={"chatHeader " + (lightMode?"":"dark")}>
@@ -114,6 +112,7 @@ export default function ChatArea({refs,setRefs}) {
                             sendMessage()
                             setMessageContent("")
                             setRefresh(!refresh)
+
                         }
                     }}
                     />

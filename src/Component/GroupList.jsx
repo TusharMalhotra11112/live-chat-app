@@ -31,7 +31,7 @@ export default function GroupList() {
             console.log("err here")
             throw new Error(err.message)
         })
-    },[refresh,userData])
+    },[refresh,userData.data.token])
 
     return (
         <div className={'onlineUsersTab' + (lightMode?"":" dark")}>
