@@ -110,8 +110,6 @@ export default function SideBar({refs,setRefs}) {
           
           else{
             if(conversation.isGroupChat){
-              console.log("group")
-              console.log(conversation.chatname)
               return(
                 <div key = {index} onClick = {()=>{setRefresh(!refresh)}}>
                   <div className={"conversation-container " + (lightMode?"":"dark")} onClick={()=>{Navigate(`chat/${conversation._id}&${conversation.chatname}`)}}>

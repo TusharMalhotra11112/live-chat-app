@@ -23,7 +23,7 @@ export default function GroupList() {
                 Authorization: `Bearer ${userData.data.token}`,
             },
         }
-        axios.get("https://chat-app-backed.onrender.com/chat/fetchGroups",config)
+        axios.get("http://localhost:5000/chat/fetchGroups",{userId:userData.data._id},config)
         .then((result)=>{
             SetGroups(result.data)
         })

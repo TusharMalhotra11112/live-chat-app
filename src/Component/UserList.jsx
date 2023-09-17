@@ -62,7 +62,6 @@ export default function UserList() {
                     users.map((user,index)=>{
                         return( 
                             <div className={"onlineUser"+ (lightMode?"":" dark" )} key={index} onClick={()=>{
-                                console.log("Creating chat with ", user.name);
                                 const config ={
                                     headers:{
                                         Authorization:`Bearer ${userData.data.token}`,
