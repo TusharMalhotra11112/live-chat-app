@@ -17,13 +17,12 @@ export default function GroupList() {
     const dispatch = useDispatch();
     const nav = useNavigate()
     useEffect(()=>{
-
         const config ={
             headers:{
-                Authorization: `Bearer ${userData.data.token}`,
+                Authorization:`Bearer ${userData.data.token}`,
             },
         }
-        axios.get("https://chat-app-backed.onrender.com/chat/fetchGroups",{userId:userData.data._id},config)
+        axios.post("http://localhost:5000/chat/fetchGroups",{userId: userData.data._id,} , config )
         .then((result)=>{
             SetGroups(result.data)
         })
@@ -54,26 +53,25 @@ export default function GroupList() {
         </div>
         
         <div className={"ou-List" + (lightMode?"":" dark")}>
-                {
-                    groups.map((group,index)=>{
-                        return( 
-                            <div className={"onlineUser"+ (lightMode?"":" dark" )} key={index} onClick={()=>{
-                                console.log("Creating chat with ", group.name);
-                                const config ={
-                                    headers:{
-                                        Authorization:`Bearer ${userData.data.token}`,
-                                    },
-                                }
-                                axios.post("https://chat-app-backed.onrender.com/chat", {userId:group._id,name:group.chatname,} ,config)
-                                dispatch(refreshSideBar)
-                            }}>
-                                <div className={"ou-Icon"+ (lightMode?"":" dark")}>{group.chatname[0].toUpperCase()}</div>
-                                <div className={"ou-Name"}>{group.chatname}</div>
-                            </div>
-                        )
-                    })
-                }
-            
+            {
+                groups.map((group,index)=>{
+                    return( 
+                        <div className={"onlineUser"+ (lightMode?"":" dark" )} key={index} onClick={()=>{
+                            console.log("Creating chat with ", group.name);
+                            const config ={
+                                headers:{
+                                    Authorization:`Bearer ${userData.data.token}`,
+                                },
+                            }
+                            axios.post("https://chat-app-backed.onrender.com/chat", {userId:group._id,name:group.chatname,} ,config)
+                            dispatch(refreshSideBar)
+                        }}>
+                            <div className={"ou-Icon"+ (lightMode?"":" dark")}>{group.chatname[0].toUpperCase()}</div>
+                            <div className={"ou-Name"}>{group.chatname}</div>
+                        </div>
+                    )
+                })
+            }
         </div>
     </div>
     )

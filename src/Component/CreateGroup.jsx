@@ -85,7 +85,7 @@ export default function CreateGroup() {
   }
 
   return (
-    <div className={'createGroupTab'}>
+    <div className={'createGroupTab'+ (lightMode?"":" dark")}>
       <div className={'createGroup '+ (lightMode?"":" dark")}>
         <img src={Logo} alt="Logo" className='ou-HeaderImg' onClick={()=>{Navigate("../welcome")}}/>
         <input type="text" className={"createGroupName"+ (lightMode?"":" dark")} placeholder='Enter Group Name' onChange={(e)=>{ setGroupName(e.target.value)}} />
