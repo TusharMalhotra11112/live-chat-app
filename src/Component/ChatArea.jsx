@@ -41,8 +41,6 @@ export default function ChatArea({refs,setRefs}) {
             scrollToBottom()
         })
     }
-    
-
 
     useEffect(()=>{
         const config = {
@@ -54,11 +52,10 @@ export default function ChatArea({refs,setRefs}) {
         .then(({data})=>{
             setAllMessages(data)
             setloaded(true)
-            scrollToBottom()
         })
 
 
-    },[refresh,user,chat_id,])
+    },[refresh,user,chat_id])
 
     const Navigate = useNavigate()
     if(!userData){
